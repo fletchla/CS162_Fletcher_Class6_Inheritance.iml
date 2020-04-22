@@ -1,14 +1,31 @@
+import java.util.ArrayList;
+
+/**
+ * Laurie Fletcher
+ * CS162
+ * Inheritance Challenge Part 2
+ */
 public class Main {
+    /**
+     * main
+      * @param args default main function
+     */
     public static void main(String[] args) {
-        TechnicalWriters t = new TechnicalWriters("Bob",6,8);
-        System.out.println(t.toString());
-        System.out.println("");
+        ArrayList<Employee> employees = new ArrayList<Employee>();
 
-        Engineers e = new Engineers("Lisa",9,12);
-        System.out.println(e.toString());
-        System.out.println("");
+        TechnicalWriters t = new TechnicalWriters("Bob", "Technical Writer",6,8);
+        employees.add(t);
 
-        ProductManagers pm = new ProductManagers("Jebidiah",2,0);
-        System.out.println(pm.toString());
+        Engineers eng = new Engineers("Lisa","Engineer",9,12);
+        employees.add(eng);
+
+        ProductManagers pm = new ProductManagers("Jebidiah","Product Manager",2,0);
+        employees.add(pm);
+
+        for (Employee e: employees) {
+            System.out.println(e.toString());
+            System.out.println("");
+        }
+
     }
 }
